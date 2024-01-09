@@ -76,7 +76,7 @@ done = False
 answer = ["_"] * len(word)
 
 print(HANGMANPICS[0])
-print(f"{''.join(answer)}\n")
+print(f"{' '.join(answer)}\n")
 
 while not done:
     if count == 6:
@@ -106,7 +106,7 @@ while not done:
             count += 1
     
         print(HANGMANPICS[count])
-        print(f"{''.join(answer)}\n")
+        print(f"{' '.join(answer)}\n")
 
         if "_" not in answer:
             print("You win!")
