@@ -2,6 +2,8 @@ import os
 
 # Functions have to be declared first!
 def clear():
+    # Docstrings!
+    """Clears the terminal in both windows and linux"""
     os.system('cls' if os.name == 'nt' else 'clear')
 
 GAVEL = '''
