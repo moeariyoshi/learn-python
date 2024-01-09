@@ -13,21 +13,22 @@ TITLE = '''
                                                              '--`
 '''
 
-CARDS = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10] * 4
+CARDS = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 cards = CARDS
 
 hand = random.sample(cards, k = 2)
-cards -= hand
+# cards are not removed as they are drawn
+# cards -= hand
 dealer = random.sample(cards, k = 2)
-cards -= dealer
+# cards -= dealer
 
 player_score = sum(hand)
 dealer_score = sum(dealer)
 
 def deal_one(cards):
     card = cards.choice()
-    cards -= card
+    # cards -= card
     return card
 
 print(f"Your cards: {hand}, current score: {player_score}")
