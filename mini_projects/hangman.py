@@ -86,6 +86,10 @@ while not done:
     else:
         guess = input("Enter a letter: ").lower()
 
+        if guess in answer:
+          print(f"You've already guessed that letter. Try again.")
+          guess = input("Enter a letter: ").lower()
+
         stats = []
         
         for letter in word:
