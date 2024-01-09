@@ -47,36 +47,38 @@ while not done:
 
     print(f"Your cards: {hand}, current score: {calculate_score(hand)}")
     print(f"Dealer's first card: {dealer[0]}")
-    new_card = input("Type 'y' to get another card, type 'n' to pass: ")
 
-    if new_card == 'y':
-        hand.append(deal_one())
+    if calculate_score(hand) < 21:
+        new_card = input("Type 'y' to get another card, type 'n' to pass: ")
 
-        print(f"Your cards: {hand}, current score: {calculate_score(hand)}")
-        print(f"Dealer's first card: {dealer[0]}")
+        if new_card == 'y':
+            hand.append(deal_one())
 
-    if calculate_score(dealer) < 17:
-        dealer.append(deal_one())
+            print(f"Your cards: {hand}, current score: {calculate_score(hand)}")
+            print(f"Dealer's first card: {dealer[0]}")
 
-    final__player_score = calculate_score(hand)
+        if calculate_score(dealer) < 17:
+            dealer.append(deal_one())
+
+        print(f"Your final hand: {hand}, final score: {calculate_score(hand)}")
+        print(f"Dealer's final hand: {dealer}, final score: {calculate_score(dealer)}")
+    
+    final_player_score = calculate_score(hand)
     final_dealer_score = calculate_score(dealer)
 
-    print(f"Your final hand: {hand}, final score: {final__player_score}")
-    print(f"Dealer's final hand: {dealer}, final score: {calculate_score(dealer)}")
-
-    if final__player_score > 21:
+    if final_player_score > 21:
         print("You lose.")
-    elif final_dealer_score == final__player_score:
+    elif final_dealer_score == final_player_score:
         print("Tied!")
     elif final_dealer_score > 21:
         print("You win!")
-    elif final__player_score < final_dealer_score:
+    elif final_player_score < final_dealer_score:
         print("You lose.")
     else:
         print("You win!")
 
-    quit_game = input("Play again? y/n")
+    play_again = input("Play again? y/n ")
 
-    if quit_game == 'y':
+    if play_again == 'n':
         done = True
         print("Goodbye!")
