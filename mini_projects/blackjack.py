@@ -23,33 +23,33 @@ hand = random.sample(cards, k = 2)
 dealer = random.sample(cards, k = 2)
 # cards -= dealer
 
-player_score = sum(hand)
-dealer_score = sum(dealer)
-
 def deal_one():
     card = random.choice(CARDS)
     # cards -= card
     return card
 
-print(f"Your cards: {hand}, current score: {player_score}")
+def calculate_score(hand):
+    return sum(hand)
+
+print(f"Your cards: {hand}, current score: {calculate_score(hand)}")
 print(f"Dealer's first card: {dealer[0]}")
 new_card = input("Type 'y' to get another card, type 'n' to pass: ")
 
 if new_card:
-    hand.append(deal_one(cards))
+    hand.append(deal_one())
 
-    print(f"Your cards: {hand}, current score: {player_score}")
+    print(f"Your cards: {hand}, current score: {calculate_score(hand)}")
     print(f"Dealer's first card: {dealer[0]}")
 
-if dealer_score < 17:
-    dealer.append(deal_one(cards))
+if calculate_score(dealer) < 17:
+    dealer.append(deal_one())
 
-    print(f"Your final hand: {hand}, final score: {player_score}")
-    print(f"Dealer's final hand: {dealer}, final score: {dealer_score}")
+    print(f"Your final hand: {hand}, final score: {calculate_score(hand)}")
+    print(f"Dealer's final hand: {dealer}, final score: {calculate_score(dealer)}")
 
-if player_score > 21:
+if calculate_score(hand) > 21:
     print("You lose.")
-elif player_score == dealer_score:
+elif calculate_score(hand) == calculate_score(dealer):
     print("Tied!")
 else:
     print("You win!")
