@@ -26,8 +26,8 @@ dealer = random.sample(cards, k = 2)
 player_score = sum(hand)
 dealer_score = sum(dealer)
 
-def deal_one(cards):
-    card = cards.choice()
+def deal_one():
+    card = random.choice(CARDS)
     # cards -= card
     return card
 
