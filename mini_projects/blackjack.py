@@ -26,6 +26,8 @@ def calculate_score(hand):
         if [11] in hand:
             # 11 (A) is counted as 1
             return sum(hand) - 10
+
+            # index() try: except ValueError: pass
     return sum(hand)
 
 print("Welcome to")
