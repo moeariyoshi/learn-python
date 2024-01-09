@@ -39,7 +39,7 @@ print(f"Your cards: {hand}, current score: {calculate_score(hand)}")
 print(f"Dealer's first card: {dealer[0]}")
 new_card = input("Type 'y' to get another card, type 'n' to pass: ")
 
-if new_card:
+if new_card == 'y':
     hand.append(deal_one())
 
     print(f"Your cards: {hand}, current score: {calculate_score(hand)}")
