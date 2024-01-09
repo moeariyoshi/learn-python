@@ -29,6 +29,10 @@ def deal_one():
     return card
 
 def calculate_score(hand):
+    if len(hand) > 2 and sum(hand) > 21:
+        if [11] in hand:
+            # 11 (A) is counted as 1
+            return sum(hand) - 10
     return sum(hand)
 
 print(f"Your cards: {hand}, current score: {calculate_score(hand)}")
