@@ -1,5 +1,8 @@
-# learn-python
-Learn Python with Angela Yu on Udemy!
+# Learn Python with Angela Yu on Udemy!
+
+![Udemy](https://img.shields.io/badge/Udemy-A435F0?style=for-the-badge&logo=Udemy&logoColor=white)   
+https://www.udemy.com/course/100-days-of-code/
+
 
 [![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
 
